@@ -4,7 +4,7 @@
     <link href="https://s3.amazonaws.com/codecademy-content/projects/bootstrap.min.css" rel="stylesheet" />
     <link href='https://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
     <link href="css/main.css" rel="stylesheet" />
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
   </head>
   <body ng-app="MoveLogApp">
     <div class="header">
@@ -15,19 +15,17 @@
 
     <div class="main" ng-controller="MainController">
       <div class="container">
-
-
-        <div class="row" ng-repeat="exercises in exercises">
-          <div class="exercise-icon col-md-2">
-            <img ng-src="{{exercises.icon}}" alt="">
+        <div ng-repeat="exercise in exercises" class="row">
+          <div class="exercise-icon col-md-2"> 
+            <img ng-src="{{exercise.icon}}">
           </div>
-
+            
           <div class="col-md-8">
-            <p class="exercise-name">{{exercises.name}} </p>
+            <p class="exercise-name">{{exercise.name}}</p>
           </div>
           
           <div class="col-md-2 counters">
-            <span class="decrease" ng-click="decrease($index)">-</span><span class="count">{{exercises.count}}</span><span class="increase" ng-click="increase($index)">+</span>
+            <span class="decrease" ng-click="decrease($index)">-</span><span class="count">{{exercise.count}}</span><span class="increase" ng-click="increase($index)">+</span>
           </div>
         </div>
         
